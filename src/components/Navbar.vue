@@ -38,6 +38,9 @@
             <li class="nav-item">
               <RouterLink to="/dashboard" class="nav-link">Dashboard</RouterLink>
             </li>
+            <li class="nav-item">
+              <RouterLink to="/cadastro-veiculos" class="nav-link">Cadastrar Veículo</RouterLink>
+            </li>
           </ul>
         </div>
       </div>

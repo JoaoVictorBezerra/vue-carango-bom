@@ -1,5 +1,5 @@
 <template>
-  <div class="container table-responsive my-5">
+  <div class="table-responsive my-5">
     <table class="table">
       <thead>
         <tr>
