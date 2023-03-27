@@ -35,6 +35,9 @@
             <li class="nav-item">
               <RouterLink to="/login" class="nav-link">Login</RouterLink>
             </li>
+            <li class="nav-item">
+              <RouterLink to="/dashboard" class="nav-link">Dashboard</RouterLink>
+            </li>
           </ul>
         </div>
       </div>
