@@ -2,12 +2,12 @@
   <div class="container">
     <form class="row g-3 d-flex flex-column align-items-center" @submit.prevent="efetuaLogin">
       <div class="col-md-4">
-        <label for="email">E-mail</label>
-        <input type="text" id="email" name="email" v-model="email" placeholder="Digite seu email..." required>
+        <label for="email" class="form-label">E-mail</label>
+        <input type="text" class="form-control" id="email" name="email" v-model="email" placeholder="Digite seu email..." required>
       </div>
       <div class="col-md-4">
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" v-model="senha" required>
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="senha" name="senha" v-model="senha" required>
       </div>
       <div class="col-md-1">
         <button type="submit" class="btn btn-success">Entrar</button>
