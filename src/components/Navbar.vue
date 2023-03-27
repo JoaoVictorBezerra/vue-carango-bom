@@ -19,7 +19,7 @@
         aria-labelledby="offcanvasNavbarLabel"
       >
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Barra de navegação</h5>
           <button
             type="button"
             class="btn-close"
@@ -33,7 +33,7 @@
               <RouterLink to="/" class="nav-link active">Home</RouterLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <RouterLink to="/login" class="nav-link">Login</RouterLink>
             </li>
           </ul>
         </div>
