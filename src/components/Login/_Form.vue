@@ -9,6 +9,7 @@
       <div class="col-md-4">
         <label for="senha" class="form-label">Senha</label>
         <input type="password" class="form-control" id="senha" name="senha" v-model="senha" required>
+        <span v-if="isLoginValid" class="text-danger">Email e senha incorretos</span>
       </div>
       <div class="col-md-1">
         <button type="submit" class="btn btn-success">Entrar</button>
@@ -30,11 +31,15 @@ const usuarioAutenticado = computed(() => usuarioStore.usuario.nome === '' ? 'Ai
 
 const email = ref('');
 const senha = ref('');
+const isLoginValid = ref(false)
 
 function efetuaLogin() {
 	autenticacaoService.autentica(email.value.trim(), senha.value, usuarioStore)
     .then(data => {
       router.push('/dashboard')
+    })
+    .catch(data => {
+      isLoginValid.value = true
     })
 }
 
