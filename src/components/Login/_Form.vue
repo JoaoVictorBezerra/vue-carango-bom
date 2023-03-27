@@ -3,7 +3,8 @@
     <form class="row g-3 d-flex flex-column align-items-center" @submit.prevent="efetuaLogin">
       <div class="col-md-4">
         <label for="email" class="form-label">E-mail</label>
-        <input type="text" class="form-control" id="email" name="email" v-model="email" placeholder="Digite seu email..." required>
+        <input type="text" class="form-control" id="email" name="email" v-model="email" placeholder="Digite seu email..."
+          required>
       </div>
       <div class="col-md-4">
         <label for="senha" class="form-label">Senha</label>
@@ -20,6 +21,9 @@
 import { computed, ref } from 'vue';
 import { useUsuarioStore } from '@/store/usuario-store.js';
 import * as autenticacaoService from '@/services/autenticacao-service.js';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const usuarioStore = useUsuarioStore();
 const usuarioAutenticado = computed(() => usuarioStore.usuario.nome === '' ? 'Ainda não autenticou' : usuarioStore.usuario.nome);
@@ -28,8 +32,10 @@ const email = ref('');
 const senha = ref('');
 
 function efetuaLogin() {
-	autenticacaoService.autentica(email.value, senha.value, usuarioStore)
-		.catch(alert);
+	autenticacaoService.autentica(email.value.trim(), senha.value, usuarioStore)
+    .then(data => {
+      router.push('/dashboard')
+    })
 }
 
 </script>
