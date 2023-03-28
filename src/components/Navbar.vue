@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
-      <RouterLink to="/" class="navbar-brand">Caranga Bom</RouterLink>
+      <RouterLink to="/" class="navbar-brand">Carango Bom</RouterLink>
       <button
         class="navbar-toggler"
         type="button"
@@ -37,6 +37,9 @@
             </li>
             <li class="nav-item">
               <RouterLink to="/dashboard" class="nav-link">Dashboard</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/cadastro-marca" class="nav-link">Cadastrar Marca</RouterLink>
             </li>
             <li class="nav-item">
               <RouterLink to="/cadastro-veiculos" class="nav-link">Cadastrar Veículo</RouterLink>

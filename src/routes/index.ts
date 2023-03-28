@@ -10,6 +10,7 @@ import HomeView from '@/views/Home.vue';
 import LoginView from '@/views/Login.vue';
 import Dashboard from '@/views/Dashboard.vue';
 import CadastroVeiculo from '@/views/CadastroVeiculo.vue';
+import CadastroMarca from '@/views/CadastroMarca.vue';
 
 const rotas: RouteRecordRaw[] = [
   {
@@ -29,8 +30,13 @@ const rotas: RouteRecordRaw[] = [
   },
   {
     path: '/cadastro-veiculos',
-    name: 'Cadastro Veículo',
+    name: 'Cadastrar Veículo',
     component: CadastroVeiculo,
+  },
+  {
+    path: '/cadastro-marca',
+    name: 'Cadastrar Marca',
+    component: CadastroMarca,
   },
 ];
 

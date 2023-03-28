@@ -5,7 +5,6 @@ export function salvarVeiculo(payload: IVeiculo): Promise<void> {
   return fetch("http://localhost:3000/api/veiculos", {
     method: "POST",
     headers: {
-      accept: "application/json",
       "content-type": "application/json",
       Authorization: `Bearer ${token}`,
     },
@@ -21,7 +20,7 @@ export function salvarVeiculo(payload: IVeiculo): Promise<void> {
     });
 }
 
-export function obterVeiculos() {
+export function listarVeiculos() {
   return fetch("http://localhost:3000/api/veiculos")
     .then((resposta) => {
       if (resposta.status == 200) {

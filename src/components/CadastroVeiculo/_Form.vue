@@ -50,9 +50,7 @@
       <div class="col-md-5">
         <label for="montadora" class="form-label">Marca</label>
         <select class="form-select" name="montadora" v-model="marca">
-          <option value="1">GM</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option v-for="montadora in montadoras" :value="montadora.id">{{ montadora.nome }}</option>
         </select>
       </div>
       <div>
@@ -63,10 +61,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+// Vue
+import { ref, onBeforeMount } from "vue";
+
+// Service
 import * as VeiculoService from "@/services/veiculos-service";
+import * as MarcaService from "@/services/marca-service";
+
+// Models
 import { criarVeiculo } from "@/models/veiculos";
+
+// Interfaces
 import type { IVeiculo } from "@/interfaces/IVeiculo";
+import type { IMarca } from "@/interfaces/IMarca";
 
 const modelo = ref<string>("");
 const ano = ref<number>();
@@ -74,6 +81,9 @@ const valor = ref<number>();
 const imagem = ref<string>("");
 const marca = ref<string>("");
 
+const montadoras = ref<IMarca[]>([]);
+
+// Funções
 function salvarVeiculo() {
   const novoVeiculo: IVeiculo = criarVeiculo(
     modelo.value,
@@ -84,7 +94,22 @@ function salvarVeiculo() {
   );
   VeiculoService.salvarVeiculo(novoVeiculo).then(() => {
     alert(`${novoVeiculo.modelo} - Adicionado com sucesso`);
+    limparFormulario()
   });
 }
-VeiculoService.obterVeiculos().then(r => console.log(r.dados))
+
+onBeforeMount(() => {
+  MarcaService.listarMarcas().then((resposta) => {
+    montadoras.value = resposta.dados;
+  });
+});
+
+function limparFormulario() {
+  modelo.value = '',
+    ano.value = undefined
+    valor.value = undefined
+    imagem.value = ''
+    marca.value = ''
+}
+
 </script>
