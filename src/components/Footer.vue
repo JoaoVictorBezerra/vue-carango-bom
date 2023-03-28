@@ -1,5 +1,5 @@
 <template>
-<p class="text-center fs-7 fixed-bottom pt-5">Copyright © {{ anoAtual }} Caranga Bom - Todos os direitos reservados</p>
+<p class="text-center fs-7 fixed-bottom pt-5">Copyright © {{ anoAtual }} Carango Bom - Todos os direitos reservados</p>
 </template>
 
 <script setup lang="ts">

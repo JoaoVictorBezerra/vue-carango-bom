@@ -6,13 +6,6 @@
 </template>
 <script setup lang="ts">
 import Table from '@/components/Dashboard/_Table.vue';
-import { listaIndicadoresMarcas } from '@/services/dashboard-service'
 import { onMounted } from 'vue'
 
-onMounted(() => {
-    listaIndicadoresMarcas()
-        .then((data: any) => {
-            console.log('Dados recebidos:', data.dados);
-        })
-})
 </script>

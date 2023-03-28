@@ -9,23 +9,30 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">GM</th>
-          <td>10 carros</td>
-          <td>R$: 50.000,000</td>
-        </tr>
-        <tr>
-          <th scope="row">Ferrari</th>
-          <td>10 carros</td>
-          <td>R$: 50.000,000</td>
-        </tr>
-        <tr>
-          <th scope="row">Ford</th>
-          <td>12 carros</td>
-          <td>R$: 50.000,000</td>
+        <tr v-for="montadora in arrayDashboard">
+          <th scope="row">{{montadora.marca}}</th>
+          <td>{{ montadora.quantidade }} carros</td>
+          <td>{{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(montadora.montante) }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// Vue
+import { ref, onMounted } from "vue";
+
+// Interface
+import type { IDashboard } from "@/interfaces/IDashboard";
+
+// Service
+import * as DashboardService from "@/services/dashboard-service";
+
+const arrayDashboard = ref<IDashboard[]>([]);
+
+onMounted(() => {
+  DashboardService.listaIndicadoresMarcas().then((data: any) => {
+    arrayDashboard.value = data.dados;
+  });
+});
+</script>

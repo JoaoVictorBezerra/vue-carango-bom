@@ -1,4 +1,8 @@
-export function listaIndicadoresMarcas(): Promise<any> {
+// Interfaces
+import type { IDashboard } from '@/interfaces/IDashboard';
+
+// Funções
+export function listaIndicadoresMarcas(): Promise<IDashboard[]> {
   const token = sessionStorage.getItem('token');
   const options = {
     method: 'GET',
