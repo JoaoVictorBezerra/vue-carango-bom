@@ -17,26 +17,41 @@ const rotas: RouteRecordRaw[] = [
     path: '/',
     name: 'Home',
     component: HomeView,
+    meta: {
+      public: false,
+    },
   },
   {
     path: '/login',
     name: 'Login',
     component: LoginView,
+    meta: {
+      public: true,
+    },
   },
   {
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+    meta: {
+      public: false,
+    },
   },
   {
     path: '/cadastro-veiculos',
     name: 'Cadastrar Veículo',
     component: CadastroVeiculo,
+    meta: {
+      public: false,
+    },
   },
   {
     path: '/cadastro-marca',
     name: 'Cadastrar Marca',
     component: CadastroMarca,
+    meta: {
+      public: false,
+    },
   },
 ];
 
