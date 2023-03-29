@@ -27,12 +27,25 @@ import type { IDashboard } from "@/interfaces/IDashboard";
 
 // Service
 import * as DashboardService from "@/services/dashboard-service";
+import { useRouter } from 'vue-router';
+import { useUsuarioStore } from '@/store/usuario-store';
+
+const usuarioStore = useUsuarioStore();
+const router = useRouter();
 
 const arrayDashboard = ref<IDashboard[]>([]);
 
 onMounted(() => {
-  DashboardService.listaIndicadoresMarcas().then((data: any) => {
+  DashboardService.listaIndicadoresMarcas()
+  .then((data: any) => {
     arrayDashboard.value = data.dados;
-  });
+  })
+  .catch(() => {
+    alert('Token expirado.')
+    sessionStorage.removeItem('token');
+		usuarioStore.limpa()
+
+		router.push('/');
+  })
 });
 </script>

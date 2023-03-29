@@ -2,6 +2,9 @@
 import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
 import { useRouter } from 'vue-router';
+import { useUsuarioStore } from '@/store/usuario-store';
+
+const usuarioStore = useUsuarioStore();
 
 const router = useRouter();
 router.beforeEach((to, from, next) => {
@@ -13,6 +16,7 @@ router.beforeEach((to, from, next) => {
     }
     return next()
 })
+
 </script>
 
 <template>

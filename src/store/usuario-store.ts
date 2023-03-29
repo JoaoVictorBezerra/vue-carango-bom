@@ -7,4 +7,10 @@ export const useUsuarioStore = defineStore('usuario', {
       nome: '',
     },
   }),
+  actions: {
+    limpa() {
+      this.usuario.email = '';
+      this.usuario.nome = '';
+    },
+  },
 });
