@@ -4,10 +4,10 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">Marca</th>
+            <th scope="col" class="w-25">Marca</th>
             <th scope="col">Modelo</th>
             <th scope="col">Ano</th>
-            <th scope="col">Valor</th>
+            <th scope="col" class="w-25">Valor</th>
             <th scope="col">Ações</th>
           </tr>
         </thead>
@@ -25,8 +25,10 @@
               }}
             </td>
             <td>
-              <button class="btn btn-danger">Excluir</button>
-              <button class="btn btn-success">Editar</button>
+              <div class="d-flex gap-2">
+                <button class="btn btn-danger">Excluir</button>
+                <button class="btn btn-success">Editar</button>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -40,8 +42,6 @@ import { ref } from "vue";
 
 // Service
 import * as VeiculoService from "@/services/veiculos-service";
-// Interface
-import type { IVeiculo } from "@/interfaces/IVeiculo";
 
 const veiculos = ref<any>([]);
 

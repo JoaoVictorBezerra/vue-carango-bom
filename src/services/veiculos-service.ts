@@ -31,3 +31,15 @@ export function listarVeiculos() {
       Promise.reject(erro);
     });
 }
+
+export function deletarVeiculo(veiculoId: string): Promise<void> {
+  return fetch(`http://localhost:3000/api/veiculos/${veiculoId}`, {
+    method: "DELETE",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((erro) => {
+      Promise.reject(erro);
+    });
+}
