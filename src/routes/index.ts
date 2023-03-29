@@ -9,8 +9,36 @@ import {
 import HomeView from '@/views/Home.vue';
 import LoginView from '@/views/Login.vue';
 import Dashboard from '@/views/Dashboard.vue';
-import CadastroVeiculo from '@/views/CadastroVeiculo.vue';
-import CadastroMarca from '@/views/CadastroMarca.vue';
+
+// Veiculos
+import Veiculos from '@/views/CadastroVeiculo.vue';
+import TabelaVeiculos from '@/components/CadastroVeiculo/_Table.vue'
+import FormularioVeiculos from '@/components/CadastroVeiculo/_Form.vue'
+const rotasVeiculos: RouteRecordRaw[] = [
+  {
+    path: 'cadastrar',
+    component: FormularioVeiculos
+  }, 
+  {
+    path: 'listar',
+    component: TabelaVeiculos
+  }
+]
+
+
+// Marcas
+import Marcas from '@/views/CadastroMarca.vue';
+import TabelaMarcas from '@/components/CadastroMarca/_Table.vue'
+import FormularioMarcas from '@/components/CadastroMarca/_Form.vue'
+const rotasMarcas: RouteRecordRaw[] = [
+  {
+    path: 'cadastrar',
+    component: FormularioMarcas
+  }, {
+    path: 'listar',
+    component: TabelaMarcas
+  }
+]
 
 const rotas: RouteRecordRaw[] = [
   {
@@ -38,17 +66,19 @@ const rotas: RouteRecordRaw[] = [
     },
   },
   {
-    path: '/cadastro-veiculos',
-    name: 'Cadastrar Veículo',
-    component: CadastroVeiculo,
+    path: '/veiculos',
+    name: 'Veículos',
+    component: Veiculos,
+    children: rotasVeiculos,
     meta: {
       public: false,
     },
   },
   {
-    path: '/cadastro-marca',
-    name: 'Cadastrar Marca',
-    component: CadastroMarca,
+    path: '/marcas',
+    name: 'Marcas',
+    component: Marcas,
+    children: rotasMarcas,
     meta: {
       public: false,
     },

@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <form class="row g-3" @submit.prevent="salvarMarca">
+  <div class="container mt-3">
+    <form class="row g-3 align-items-center flex-column" @submit.prevent="salvarMarca">
       <div class="col-md-4">
         <label for="montadora" class="form-label">Nome da marca:</label>
         <input
@@ -13,9 +13,7 @@
           required
         />
       </div>
-      <div>
-        <button type="submit" class="btn btn-success">Adicionar Veículo</button>
-      </div>
+      <button type="submit" class="btn btn-success w-25">Adicionar Veículo</button>
     </form>
   </div>
 </template>

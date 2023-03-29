@@ -39,10 +39,10 @@
               <RouterLink to="/dashboard" class="nav-link">Dashboard</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink to="/cadastro-marca" class="nav-link">Cadastrar Marca</RouterLink>
+              <RouterLink to="/marcas" class="nav-link">Marcas</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink to="/cadastro-veiculos" class="nav-link">Cadastrar Veículo</RouterLink>
+              <RouterLink to="/veiculos" class="nav-link">Veículos</RouterLink>
             </li>
           </ul>
         </div>
@@ -50,4 +50,6 @@
     </div>
   </nav>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+</script>
