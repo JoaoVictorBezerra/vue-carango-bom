@@ -14,7 +14,6 @@
         <tbody>
           <tr v-for="veiculo in veiculos">
             <td scope="row">{{ veiculo.marca?.nome }}</td>
-            <td scope="row">{{ veiculo.nome }}</td>
             <td scope="row">{{ veiculo.modelo }}</td>
             <td scope="row">{{ veiculo.ano }}</td>
             <td scope="row">
@@ -28,7 +27,7 @@
             <td>
               <div class="d-flex gap-2">
                 <button @click.prevent="_deletarVeiculo(veiculo.id)" class="btn btn-danger">Excluir</button>
-                <button class="btn btn-success">Editar</button>
+                <button @click.prevent="_editarVeiculo(veiculo)" class="btn btn-success">Editar</button>
               </div>
             </td>
           </tr>
@@ -43,6 +42,7 @@ import { ref } from "vue";
 
 // Service
 import * as VeiculoService from "@/services/veiculos-service";
+import type { IVeiculo } from '@/interfaces/IVeiculo'
 
 const veiculos = ref<any>([]);
 
@@ -52,6 +52,16 @@ function _deletarVeiculo(veiculoId: string) {
         alert('Veículo deletado com sucesso !!')
       }
     )
+}
+
+function _editarVeiculo(veiculo: IVeiculo) : void {
+  const novoModelo = prompt("Insira o novo modelo desse veículo")
+  if(novoModelo){
+    veiculo.modelo = novoModelo;
+    VeiculoService.editarVeiculo(veiculo).then(() => {
+      alert('Veículo editada com sucesso!')
+    })
+  }
 }
 
 

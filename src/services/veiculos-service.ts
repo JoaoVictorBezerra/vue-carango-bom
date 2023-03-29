@@ -48,3 +48,21 @@ export function deletarVeiculo(veiculoId: string): Promise<void> {
       Promise.reject(erro);
     });
 }
+
+export function editarVeiculo(veiculo: any): Promise<void> {
+  const token = sessionStorage.getItem('token');
+  return fetch(`http://localhost:3000/api/veiculos/${veiculo.id}`, {
+    method: 'PUT',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(veiculo),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((erro) => {
+      Promise.reject(erro);
+    });
+}
