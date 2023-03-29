@@ -13,20 +13,21 @@
         </thead>
         <tbody>
           <tr v-for="veiculo in veiculos">
-            <td scope="row">{{ veiculo.marca.nome }}</td>
+            <td scope="row">{{ veiculo.marca?.nome }}</td>
+            <td scope="row">{{ veiculo.nome }}</td>
             <td scope="row">{{ veiculo.modelo }}</td>
             <td scope="row">{{ veiculo.ano }}</td>
             <td scope="row">
               {{
-                new Intl.NumberFormat("pt-BR", {
-                  style: "currency",
-                  currency: "BRL",
-                }).format(veiculo.valor)
+              new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+              }).format(veiculo.valor)
               }}
             </td>
             <td>
               <div class="d-flex gap-2">
-                <button class="btn btn-danger">Excluir</button>
+                <button @click.prevent="_deletarVeiculo(veiculo.id)" class="btn btn-danger">Excluir</button>
                 <button class="btn btn-success">Editar</button>
               </div>
             </td>
@@ -45,8 +46,17 @@ import * as VeiculoService from "@/services/veiculos-service";
 
 const veiculos = ref<any>([]);
 
+function _deletarVeiculo(veiculoId: string) {
+  VeiculoService.deletarVeiculo(veiculoId)
+    .then(() => {
+        alert('Veículo deletado com sucesso !!')
+      }
+    )
+}
+
+
 VeiculoService.listarVeiculos().then((resposta) => {
-  console.log(resposta);
+  // console.log(resposta);
   veiculos.value = resposta.dados;
 });
 

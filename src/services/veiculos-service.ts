@@ -1,11 +1,11 @@
-import type { IVeiculo } from "@/interfaces/IVeiculo";
+import type { IVeiculo } from '@/interfaces/IVeiculo';
 
 export function salvarVeiculo(payload: IVeiculo): Promise<void> {
-  const token = sessionStorage.getItem("token");
-  return fetch("http://localhost:3000/api/veiculos", {
-    method: "POST",
+  const token = sessionStorage.getItem('token');
+  return fetch('http://localhost:3000/api/veiculos', {
+    method: 'POST',
     headers: {
-      "content-type": "application/json",
+      'content-type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(payload),
@@ -21,7 +21,7 @@ export function salvarVeiculo(payload: IVeiculo): Promise<void> {
 }
 
 export function listarVeiculos() {
-  return fetch("http://localhost:3000/api/veiculos")
+  return fetch('http://localhost:3000/api/veiculos')
     .then((resposta) => {
       if (resposta.status == 200) {
         return resposta.json();
@@ -33,8 +33,13 @@ export function listarVeiculos() {
 }
 
 export function deletarVeiculo(veiculoId: string): Promise<void> {
+  const token = sessionStorage.getItem('token');
   return fetch(`http://localhost:3000/api/veiculos/${veiculoId}`, {
-    method: "DELETE",
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
   })
     .then((response) => {
       return response.json();
