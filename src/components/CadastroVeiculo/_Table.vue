@@ -56,10 +56,9 @@ function _deletarVeiculo(veiculoId: string) {
 
 function _editarVeiculo(veiculo: IVeiculo, marca: any) : void {
   const novoModelo = prompt("Insira o novo modelo desse veículo")
-  const novaMarca = prompt("Insira a nova marca desse veículo")
-  if(novoModelo && novaMarca){
+  if(novoModelo){
     veiculo.modelo = novoModelo;
-    marca.nome = novaMarca;
+
     console.log(veiculo)
     VeiculoService.editarVeiculo(veiculo).then(() => {
       alert('Veículo editada com sucesso!')
