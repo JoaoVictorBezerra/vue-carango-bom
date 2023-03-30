@@ -27,7 +27,7 @@
             <td>
               <div class="d-flex gap-2">
                 <button @click.prevent="_deletarVeiculo(veiculo.id)" class="btn btn-danger">Excluir</button>
-                <button @click.prevent="_editarVeiculo(veiculo, veiculo.marca)" class="btn btn-success">Editar</button>
+                <button @click.prevent="_editarVeiculo(veiculo)" class="btn btn-success">Editar</button>
               </div>
             </td>
           </tr>
@@ -54,7 +54,7 @@ function _deletarVeiculo(veiculoId: string) {
     )
 }
 
-function _editarVeiculo(veiculo: IVeiculo, marca: any) : void {
+function _editarVeiculo(veiculo: IVeiculo) : void {
   const novoModelo = prompt("Insira o novo modelo desse veículo")
   if(novoModelo){
     veiculo.modelo = novoModelo;
