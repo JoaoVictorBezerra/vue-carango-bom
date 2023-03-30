@@ -39,10 +39,10 @@
               <RouterLink to="/dashboard" class="nav-link">Dashboard</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink to="/marcas" class="nav-link">Marcas</RouterLink>
+              <RouterLink to="/marcas/listar" class="nav-link">Marcas</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink to="/veiculos" class="nav-link">Veículos</RouterLink>
+              <RouterLink to="/veiculos/listar" class="nav-link">Veículos</RouterLink>
             </li>
           </ul>
         </div>
