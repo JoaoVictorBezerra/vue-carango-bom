@@ -7,43 +7,33 @@ import {
 
 /*================================= Imports do Componente Principal =================================*/
 import HomeView from '@/views/Home.vue';
-import LoginView from '@/views/Login.vue';
-import Dashboard from '@/views/Dashboard.vue';
 
-// Veiculos
-import Veiculos from '@/views/CadastroVeiculo.vue';
-import TabelaVeiculos from '@/components/CadastroVeiculo/_Table.vue'
-import FormularioVeiculos from '@/components/CadastroVeiculo/_Form.vue'
-import EditarVeiculo from '@/components/CadastroVeiculo/_EditForm.vue'
 const rotasVeiculos: RouteRecordRaw[] = [
   {
     path: 'cadastrar',
-    component: FormularioVeiculos
-  }, 
+    component: () => import('@/components/CadastroVeiculo/_Form.vue'),
+  },
   {
     path: 'listar',
-    component: TabelaVeiculos
-  }, {
+    component: () => import('@/components/CadastroVeiculo/_Table.vue'),
+  },
+  {
     path: 'editar/:id',
-    component: EditarVeiculo,
-    props: true
-  }
-]
+    component: () => import('@/components/CadastroVeiculo/_EditForm.vue'),
+    props: true,
+  },
+];
 
-
-// Marcas
-import Marcas from '@/views/CadastroMarca.vue';
-import TabelaMarcas from '@/components/CadastroMarca/_Table.vue'
-import FormularioMarcas from '@/components/CadastroMarca/_Form.vue'
 const rotasMarcas: RouteRecordRaw[] = [
   {
     path: 'cadastrar',
-    component: FormularioMarcas
-  }, {
+    component: () => import('@/components/CadastroMarca/_Form.vue'),
+  },
+  {
     path: 'listar',
-    component: TabelaMarcas
-  }
-]
+    component: () => import('@/components/CadastroMarca/_Table.vue'),
+  },
+];
 
 const rotas: RouteRecordRaw[] = [
   {
@@ -57,7 +47,7 @@ const rotas: RouteRecordRaw[] = [
   {
     path: '/login',
     name: 'Login',
-    component: LoginView,
+    component: () => import('@/views/Login.vue'),
     meta: {
       public: true,
     },
@@ -65,7 +55,7 @@ const rotas: RouteRecordRaw[] = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: Dashboard,
+    component: () => import('@/views/Dashboard.vue'),
     meta: {
       public: false,
     },
@@ -73,7 +63,7 @@ const rotas: RouteRecordRaw[] = [
   {
     path: '/veiculos',
     name: 'Veículos',
-    component: Veiculos,
+    component: () => import('@/views/CadastroVeiculo.vue'),
     children: rotasVeiculos,
     meta: {
       public: false,
@@ -82,7 +72,7 @@ const rotas: RouteRecordRaw[] = [
   {
     path: '/marcas',
     name: 'Marcas',
-    component: Marcas,
+    component: () => import('@/views/CadastroMarca.vue'),
     children: rotasMarcas,
     meta: {
       public: false,
