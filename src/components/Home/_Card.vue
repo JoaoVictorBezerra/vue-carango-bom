@@ -1,6 +1,8 @@
 <template>
   <div class="card text-center" style="width: 18rem">
-    <img :src="props.carro!.imagemUrl" class="card-img-top" :alt="props.carro!.nome" />
+    <div style="height: 12rem" class="text-center">
+      <img :src="props.carro!.imagemUrl" class="card-img-top" :alt="props.carro!.nome" />
+    </div>
     <div class="card-body">
       <h5 class="card-title">{{ props.carro!.marca.nome + ' - ' + props.carro!.modelo }}</h5>
       <p class="card-text">

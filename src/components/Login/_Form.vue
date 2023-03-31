@@ -36,7 +36,7 @@ const isLoginValid = ref(false)
 function efetuaLogin() {
 	autenticacaoService.autentica(email.value.trim(), senha.value, usuarioStore)
     .then(data => {
-      router.push('/dashboard')
+      router.push('/')
     })
     .catch(data => {
       isLoginValid.value = true
