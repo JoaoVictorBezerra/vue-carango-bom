@@ -1,5 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.btn-list {
+  border-radius: 7px;
+  color: rgb(252, 252, 248);
+  background-color: rgb(78, 78, 78);
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.btn-list:hover {
+  border-radius: 7px;
+  color: rgb(5, 5, 4);
+  background-color: rgb(163, 170, 179);
 }

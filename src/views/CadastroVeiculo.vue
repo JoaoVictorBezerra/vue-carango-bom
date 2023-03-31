@@ -3,10 +3,10 @@
     <nav>
       <ul class="nav">
         <li class="nav-item">
-          <RouterLink to="/veiculos/listar" class="nav-link">Listar Veículos</RouterLink>
+          <RouterLink to="/veiculos/listar" class="nav-link btn-list">Listar Veículos</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink to="/veiculos/cadastrar" class="nav-link">Adicionar Veículos</RouterLink>
+          <RouterLink to="/veiculos/cadastrar" class="nav-link btn-list">Adicionar Veículos</RouterLink>
         </li>
       </ul>
     </nav>

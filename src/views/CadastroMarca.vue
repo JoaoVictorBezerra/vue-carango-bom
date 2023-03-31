@@ -3,10 +3,10 @@
     <nav>
       <ul class="nav">
         <li class="nav-item">
-          <RouterLink to="/marcas/listar" class="nav-link">Listar Marcas</RouterLink>
+          <RouterLink to="/marcas/listar" class="nav-link btn-list">Listar Marcas</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink to="/marcas/cadastrar" class="nav-link">Adicionar marca</RouterLink>
+          <RouterLink to="/marcas/cadastrar" class="nav-link btn-list">Adicionar marca</RouterLink>
         </li>
       </ul>
     </nav>
