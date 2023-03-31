@@ -32,6 +32,18 @@ export function listarVeiculos() {
     });
 }
 
+export function listarVeiculo(veiculoId: string) {
+  return fetch(`http://localhost:3000/api/veiculos/${veiculoId}`)
+    .then((resposta) => {
+      if (resposta.status == 200) {
+        return resposta.json();
+      }
+    })
+    .catch((erro) => {
+      Promise.reject(erro);
+    });
+}
+
 export function deletarVeiculo(veiculoId: string): Promise<void> {
   const token = sessionStorage.getItem('token');
   return fetch(`http://localhost:3000/api/veiculos/${veiculoId}`, {

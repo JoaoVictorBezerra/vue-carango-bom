@@ -21,8 +21,12 @@
             </td>
             <td>
               <div class="d-flex gap-2">
-                <button @click.prevent="_deletarVeiculo(veiculo.id)" class="btn btn-danger">Excluir</button>
-                <button @click.prevent="_editarVeiculo(veiculo)" class="btn btn-success">Editar</button>
+                <button @click.prevent="_deletarVeiculo(veiculo.id)" class="btn btn-danger">
+                  Excluir
+                </button>
+                <RouterLink :to="'editar/'+veiculo.id" class="btn btn-success">
+                  Editar
+                </RouterLink>
               </div>
             </td>
           </tr>
@@ -39,32 +43,30 @@ import { ref } from "vue";
 import * as VeiculoService from "@/services/veiculos-service";
 import type { IVeiculo } from '@/interfaces/IVeiculo'
 import { converetReal } from '@/utils/converetReal'
-
 const veiculos = ref<any>([]);
 
 function _deletarVeiculo(veiculoId: string) {
-  VeiculoService.deletarVeiculo(veiculoId)
-    .then(() => {
-        alert('Veículo deletado com sucesso !!')
-      }
-    )
-}
-
-function _editarVeiculo(veiculo: IVeiculo) : void {
-  const novoModelo = prompt("Insira o novo modelo desse veículo")
-  if(novoModelo){
-    veiculo.modelo = novoModelo;
-
-    console.log(veiculo)
-    VeiculoService.editarVeiculo(veiculo).then(() => {
-      alert('Veículo editada com sucesso!')
-    })
+  const deletar = confirm("Deseja mesmo deletar esse veículo?");
+  if (deletar) {
+    VeiculoService.deletarVeiculo(veiculoId).then(() => {
+      alert("Veículo deletado com sucesso!");
+    });
   }
 }
 
+function _editarVeiculo(veiculo: IVeiculo): void {
+  const novoModelo = prompt("Insira o novo modelo desse veículo");
+  if (novoModelo) {
+    veiculo.modelo = novoModelo;
+
+    // console.log(veiculo);
+    VeiculoService.editarVeiculo(veiculo).then(() => {
+      alert("Veículo editada com sucesso!");
+    });
+  }
+}
 
 VeiculoService.listarVeiculos().then((resposta) => {
-  // console.log(resposta);
   veiculos.value = resposta.dados;
 });
 

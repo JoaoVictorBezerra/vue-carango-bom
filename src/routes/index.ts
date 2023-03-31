@@ -14,6 +14,7 @@ import Dashboard from '@/views/Dashboard.vue';
 import Veiculos from '@/views/CadastroVeiculo.vue';
 import TabelaVeiculos from '@/components/CadastroVeiculo/_Table.vue'
 import FormularioVeiculos from '@/components/CadastroVeiculo/_Form.vue'
+import EditarVeiculo from '@/components/CadastroVeiculo/_EditForm.vue'
 const rotasVeiculos: RouteRecordRaw[] = [
   {
     path: 'cadastrar',
@@ -22,6 +23,10 @@ const rotasVeiculos: RouteRecordRaw[] = [
   {
     path: 'listar',
     component: TabelaVeiculos
+  }, {
+    path: 'editar/:id',
+    component: EditarVeiculo,
+    props: true
   }
 ]
 
