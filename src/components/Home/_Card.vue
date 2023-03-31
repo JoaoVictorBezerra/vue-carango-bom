@@ -7,13 +7,15 @@
         {{ props.carro!.ano }}
       </p>
       <p class="card-text">
-        {{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(props.carro!.valor) }}
+        {{ converetReal(props.carro!.valor) }}
       </p>
       <a href="#" class="btn btn-primary">Comprar</a>
     </div>
   </div>
 </template>
 <script setup lang="ts">
+//utils
+import { converetReal } from '@/utils/converetReal'
 
 const props = defineProps({
     carro: Object

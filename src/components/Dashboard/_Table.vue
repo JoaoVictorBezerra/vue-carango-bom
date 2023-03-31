@@ -12,7 +12,9 @@
         <tr v-for="montadora in arrayDashboard">
           <th scope="row">{{montadora.marca}}</th>
           <td>{{ montadora.quantidade }} carros</td>
-          <td>{{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(montadora.montante) }}</td>
+          <td>
+            {{ converetReal(montadora.montante) }}
+          </td>
         </tr>
       </tbody>
     </table>
@@ -29,6 +31,9 @@ import type { IDashboard } from "@/interfaces/IDashboard";
 import * as DashboardService from "@/services/dashboard-service";
 import { useRouter } from 'vue-router';
 import { useUsuarioStore } from '@/store/usuario-store';
+
+//utils
+import { converetReal } from '@/utils/converetReal'
 
 const usuarioStore = useUsuarioStore();
 const router = useRouter();

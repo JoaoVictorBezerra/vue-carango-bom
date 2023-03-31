@@ -17,12 +17,7 @@
             <td scope="row">{{ veiculo.modelo }}</td>
             <td scope="row">{{ veiculo.ano }}</td>
             <td scope="row">
-              {{
-              new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-              }).format(veiculo.valor)
-              }}
+              {{ converetReal(veiculo.valor) }}
             </td>
             <td>
               <div class="d-flex gap-2">
@@ -43,6 +38,7 @@ import { ref } from "vue";
 // Service
 import * as VeiculoService from "@/services/veiculos-service";
 import type { IVeiculo } from '@/interfaces/IVeiculo'
+import { converetReal } from '@/utils/converetReal'
 
 const veiculos = ref<any>([]);
 
