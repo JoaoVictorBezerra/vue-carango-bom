@@ -40,15 +40,26 @@ import * as VeiculoService from "@/services/veiculos-service";
 import * as MarcaService from "@/services/marca-service";
 // Router
 import { useRoute } from "vue-router";
+//Types
+import type { IVeiculo } from '@/interfaces/IVeiculo';
+
 const router = useRoute();
 const veiculo = ref();
 const montadoras = ref();
 const veiculoId = router.params.id as string
 
 function salvarEdicaoVeiculo() {
-  VeiculoService.editarVeiculo(veiculo).then(() => {
-      alert("Veículo editada com sucesso!");
-  });
+    const novoModelo: IVeiculo = {
+      id: veiculoId,
+      modelo: veiculo.value.modelo,
+      ano: veiculo.value.ano,
+      valor: veiculo.value.valor,
+      imagemUrl: veiculo.value.imagemUrl,
+      marcaId: veiculo.value.marca.id
+    }
+    VeiculoService.editarVeiculo(novoModelo).then(() => {
+        alert("Veículo editado com sucesso!");
+    });
 }
 
 onBeforeMount(() => {
