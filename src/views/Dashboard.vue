@@ -6,5 +6,4 @@
 </template>
 <script setup lang="ts">
 import Table from '@/components/Dashboard/_Table.vue';
-
 </script>

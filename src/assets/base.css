@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+:root {
+  --bs-body-bg: #1f1f1f;
+}
+
 html {
   font-family: 'Roboto', sans-serif;
 }
-
 .btn-list {
   border-radius: 7px;
   color: rgb(252, 252, 248);
@@ -16,4 +19,14 @@ html {
   border-radius: 7px;
   color: rgb(5, 5, 4);
   background-color: rgb(163, 170, 179);
+}
+
+.bg-grey {
+  background-color: #181818;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #181818 inset;
 }

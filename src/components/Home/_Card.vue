@@ -9,17 +9,25 @@
         {{ props.carro!.ano }}
       </p>
       <p class="card-text">
-        {{ converetReal(props.carro!.valor) }}
+        {{ mascaraReal(props.carro!.valor) }}
       </p>
-      <a href="#" class="btn btn-primary">Comprar</a>
+      <a href="#" class="btn btn-outline-danger">Comprar</a>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-//utils
-import { converetReal } from '@/utils/converetReal'
+// Utils
+import { mascaraReal } from '@/utils/valoresMonetarios'
 
+// Props
 const props = defineProps({
     carro: Object
 })
+
 </script>
+<style scoped>
+  .card {
+    width: 100%;
+    height: 100%;
+  }
+</style>

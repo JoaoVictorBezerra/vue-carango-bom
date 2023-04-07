@@ -13,8 +13,8 @@
             <td scope="row">{{ marca!.nome }}</td>
             <td>
               <div class="d-flex gap-2">
-                <button class="btn btn-danger" @click.prevent="deletarMarca(marca.id as string)">Excluir</button>
-                <button class="btn btn-success" @click.prevent="editarMarca(marca)">Editar</button>
+                <button class="btn btn-outline-danger" @click.prevent="deletarMarca(marca.id as string)">Excluir</button>
+                <button class="btn btn-outline-success" @click.prevent="editarMarca(marca)">Editar</button>
               </div>
             </td>
           </tr>

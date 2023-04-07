@@ -17,14 +17,14 @@
             <td scope="row">{{ veiculo.modelo }}</td>
             <td scope="row">{{ veiculo.ano }}</td>
             <td scope="row">
-              {{ converetReal(veiculo.valor) }}
+              {{ mascaraReal(veiculo.valor) }}
             </td>
             <td>
               <div class="d-flex gap-2">
-                <button @click.prevent="_deletarVeiculo(veiculo.id)" class="btn btn-danger">
+                <button @click.prevent="_deletarVeiculo(veiculo.id)" class="btn btn-outline-danger">
                   Excluir
                 </button>
-                <RouterLink :to="'editar/'+veiculo.id" class="btn btn-success">
+                <RouterLink :to="'editar/'+veiculo.id" class="btn btn-outline-success">
                   Editar
                 </RouterLink>
               </div>
@@ -41,10 +41,18 @@ import { ref } from "vue";
 
 // Service
 import * as VeiculoService from "@/services/veiculos-service";
+
+// Interface
 import type { IVeiculo } from '@/interfaces/IVeiculo'
-import { converetReal } from '@/utils/converetReal'
+
+// Utils
+import { mascaraReal } from '@/utils/valoresMonetarios'
+
+// Variáveis
 const veiculos = ref<any>([]);
 
+
+// Funcs
 function _deletarVeiculo(veiculoId: string) {
   const deletar = confirm("Deseja mesmo deletar esse veículo?");
   if (deletar) {
@@ -59,7 +67,6 @@ function _editarVeiculo(veiculo: IVeiculo): void {
   if (novoModelo) {
     veiculo.modelo = novoModelo;
 
-    // console.log(veiculo);
     VeiculoService.editarVeiculo(veiculo).then(() => {
       alert("Veículo editada com sucesso!");
     });
@@ -70,5 +77,4 @@ VeiculoService.listarVeiculos().then((resposta) => {
   veiculos.value = resposta.dados;
 });
 
-// Funções
 </script>

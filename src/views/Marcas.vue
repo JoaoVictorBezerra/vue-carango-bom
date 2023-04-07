@@ -1,12 +1,12 @@
 <template>
   <div class="container d-flex align-items-center justify-content-center">
     <nav>
-      <ul class="nav">
+      <ul class="nav gap-2">
         <li class="nav-item">
-          <RouterLink to="/veiculos/listar" class="nav-link btn-list">Listar Veículos</RouterLink>
+          <BotaoRota rota="/marcas/listar" titulo="Listar Marcas"/>
         </li>
         <li class="nav-item">
-          <RouterLink to="/veiculos/cadastrar" class="nav-link btn-list">Adicionar Veículos</RouterLink>
+          <BotaoRota rota="/marcas/cadastrar" titulo="Adicionar marca"/>
         </li>
       </ul>
     </nav>
@@ -15,4 +15,5 @@
 </template>
 
 <script setup lang="ts">
+import BotaoRota from '@/components/Button.vue';
 </script>

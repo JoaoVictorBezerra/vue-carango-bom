@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container my-5">
     <form class="row g-3" @submit.prevent="salvarVeiculo">
       <div class="col-md-4">
         <label for="modelo" class="form-label">Modelo</label>
@@ -54,7 +54,7 @@
         </select>
       </div>
       <div>
-        <button type="submit" class="btn btn-success">Adicionar Veículo</button>
+        <button type="submit" class="btn btn-outline-success">Adicionar Veículo</button>
       </div>
     </form>
   </div>

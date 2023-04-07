@@ -5,6 +5,7 @@ export const useUsuarioStore = defineStore('usuario', {
     usuario: {
       email: '',
       nome: '',
+      logado: false,
     },
   }),
   actions: {

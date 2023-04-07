@@ -21,10 +21,9 @@ const carrosAVenda = ref([]);
 
 // Funções
 onBeforeMount(() => {
-  VeiculoService.listarVeiculos().then((r) => {
-    r = r.dados
-    carrosAVenda.value = r;
-    console.log(r);
+  VeiculoService.listarVeiculos().then((resposta) => {
+    resposta = resposta.dados
+    carrosAVenda.value = resposta;
   });
 });
 </script>

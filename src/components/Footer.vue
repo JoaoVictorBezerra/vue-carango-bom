@@ -3,8 +3,9 @@
 </template>
 
 <script setup lang="ts">
-    const data: Date = new Date()
-    const anoAtual: number = data.getFullYear()
+// Variaveis
+const data: Date = new Date()
+const anoAtual: number = data.getFullYear()
 </script>
 
 <style scoped>

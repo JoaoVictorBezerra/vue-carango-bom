@@ -1,5 +1,5 @@
 <template>
-<h2 class="text-center">Bem vindo ao Carango Bom</h2>
+<h2 class="text-center mb-5">Bem vindo ao Carango Bom</h2>
 <Cards />
 </template>
 <script setup lang="ts">

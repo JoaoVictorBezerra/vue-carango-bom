@@ -13,7 +13,7 @@
           <th scope="row">{{montadora.marca}}</th>
           <td>{{ montadora.quantidade }} carros</td>
           <td>
-            {{ converetReal(montadora.montante) }}
+            {{ mascaraReal(montadora.montante) }}
           </td>
         </tr>
       </tbody>
@@ -32,14 +32,16 @@ import * as DashboardService from "@/services/dashboard-service";
 import { useRouter } from 'vue-router';
 import { useUsuarioStore } from '@/store/usuario-store';
 
-//utils
-import { converetReal } from '@/utils/converetReal'
+// Utils
+import { mascaraReal } from '@/utils/valoresMonetarios'
 
+// Variaveis
 const usuarioStore = useUsuarioStore();
 const router = useRouter();
 
 const arrayDashboard = ref<IDashboard[]>([]);
 
+// Funcs
 onMounted(() => {
   DashboardService.listaIndicadoresMarcas()
   .then((data: any) => {

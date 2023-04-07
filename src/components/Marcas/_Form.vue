@@ -14,7 +14,7 @@
         />
       </div>
       <div>
-        <button type="submit" class="btn btn-success">Adicionar Marca</button>
+        <button type="submit" class="btn btn-outline-success">Adicionar Marca</button>
       </div>
     </form>
   </div>
