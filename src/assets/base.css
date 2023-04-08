@@ -1,5 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arima&family=Martel&family=Ubuntu&display=swap");
+
+:root {
+  --bs-body-bg: #1f1f1f;
+}
 
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Martel', serif;
+}
+.arima {
+  font-family: "Arima", arima;
+}
+.ubuntu {
+  font-family: "Ubuntu", sans-serif;
+}
+.btn-list {
+  border-radius: 7px;
+  color: rgb(252, 252, 248);
+  background-color: rgb(78, 78, 78);
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.btn-list:hover {
+  border-radius: 7px;
+  color: rgb(5, 5, 4);
+  background-color: rgb(163, 170, 179);
+}
+
+.bg-grey {
+  background-color: #181818;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #181818 inset;
 }

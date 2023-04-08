@@ -1,6 +1,7 @@
 <template>
-<h1>Bem vindo</h1>
+<h2 class="text-center mb-5 ubuntu">Bem vindo ao Carango Bom</h2>
+<Cards />
 </template>
 <script setup lang="ts">
-
+import Cards from '@/components/Home/Cards.vue';
 </script>
