@@ -2,7 +2,7 @@
 import type { IDashboard } from '@/interfaces/IDashboard';
 
 // Funções
-export function listaIndicadoresMarcas(): Promise<IDashboard[]> {
+export function listaIndicadoresMarcas(): Promise<Record<string, any>> {
   const token = sessionStorage.getItem('token');
   const options = {
     method: 'GET',
