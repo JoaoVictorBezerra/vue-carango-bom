@@ -1,9 +1,7 @@
 <template>
   <div class="container">
-    <div class="d-flex flex-column flex-md-row flex-md-wrap gap-4 align-items-center justify-content-md-center">
-      <div v-for="carro in carrosAVenda">
-        <Card :carro="carro" />
-      </div>
+    <div class="d-flex flex-md-row flex-wrap gap-4 justify-content-center">
+      <Card v-for="carro in carrosAVenda" :carro="carro" />
     </div>
   </div>
 </template>
@@ -22,8 +20,10 @@ const carrosAVenda = ref([]);
 // Funções
 onBeforeMount(() => {
   VeiculoService.listarVeiculos().then((resposta) => {
-    resposta = resposta.dados
+    resposta = resposta.dados;
     carrosAVenda.value = resposta;
   });
 });
 </script>
+<style scoped>
+</style>
