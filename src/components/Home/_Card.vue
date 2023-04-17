@@ -1,5 +1,4 @@
 <template>
-
     <div class="card text-center" style="width: 18rem">
       <div style="height: 12rem" class="text-center">
         <img
@@ -33,5 +32,4 @@ const props = defineProps({
 });
 </script>
 <style scoped>
-
 </style>
