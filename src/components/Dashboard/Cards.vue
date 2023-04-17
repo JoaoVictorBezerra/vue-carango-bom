@@ -1,8 +1,6 @@
 <template>
-  <div class="container d-flex justify-content-center text-center">
-    <div class="d-flex flex-wrap gap-4">
+    <div class="cards d-flex flex-wrap gap-4">
       <Card v-for="marca in marcas" :marca="marca" />
-    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -25,4 +23,20 @@ onMounted(() => {
   });
 });
 </script>
-<style scoped></style>
+<style scoped>
+@media (min-width: 320px) and (max-width: 767px) {
+  .cards {
+    width: 286px!important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cards {
+    width: 600px!important;
+  }
+}
+@media (min-width: 1024px) {
+  .cards {
+    width: 912px!important;
+  }
+}
+</style>

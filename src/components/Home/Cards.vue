@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <div class="d-flex flex-md-row flex-wrap gap-4 justify-content-center">
-      <Card v-for="carro in carrosAVenda" :carro="carro" />
+  <div class="container d-flex flex-column align-items-center">
+    <div class="cards row row-cols-4 gap-4">
+      <Card class="px-0" v-for="carro in carrosAVenda" :carro="carro" />
     </div>
   </div>
 </template>
@@ -26,4 +26,19 @@ onBeforeMount(() => {
 });
 </script>
 <style scoped>
+@media (min-width: 320px) and (max-width: 767px) {
+  .cards {
+    width: 288px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cards {
+    width: 600px;
+  }
+}
+@media (min-width: 1024px) {
+  .cards {
+    width: 912px;
+  }
+}
 </style>
