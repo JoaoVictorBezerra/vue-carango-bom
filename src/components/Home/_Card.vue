@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-lg-fill">
+
     <div class="card text-center" style="width: 18rem">
       <div style="height: 12rem" class="text-center">
         <img
@@ -22,7 +22,6 @@
         <a href="#" class="btn btn-outline-danger">Comprar</a>
       </div>
     </div>
-  </div>
 </template>
 <script setup lang="ts">
 // Utils
@@ -34,8 +33,5 @@ const props = defineProps({
 });
 </script>
 <style scoped>
-.card {
-  width: 100%;
-  height: 100%;
-}
+
 </style>

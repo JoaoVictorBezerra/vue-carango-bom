@@ -1,5 +1,5 @@
 <template>
-  <div class="card text-bg-danger mb-3" style="width: 18rem">
+  <div class="card text-bg-danger mb-3 text-center" style="width: 18rem">
     <div class="card-body">
       <h5 class="card-title mb-3 ubuntu">{{ marca!.marca }}</h5>
       <p class="card-text">Total de veículos: {{ marca!.quantidade }}</p>
